@@ -1,0 +1,66 @@
+/* Core setup for a clean cosmic background */
+body {
+  background-color: #0b0b14;
+  color: #f0f0f8;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 2rem;
+}
+
+/* Tab list container */
+.tabs [role="tablist"] {
+  display: flex;
+  gap: 1rem; /* Bigger spacing between tabs */
+  margin-bottom: 0; /* Removed bottom margin so tabs lock flush onto the panel border */
+  position: relative;
+  z-index: 2;
+}
+
+/* The Individual Space Tab Control Buttons */
+[role="tab"] {
+  padding: 1rem 2rem; /* Significantly larger click targets */
+  font-size: 1.2rem; /* Enhanced readability scale */
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #8fa0dd;
+  background: linear-gradient(180deg, #16162d 0%, #101020 100%);
+  border: 2px solid #232342;
+  border-bottom: none; /* Let the tabs sit smoothly on top of the panel border */
+  border-radius: 12px 12px 0 0; /* Rounded spaceship cockpit window corners */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effects when exploring alternative options */
+[role="tab"]:hover {
+  color: #ffffff;
+  background: #1c1c3a;
+  border-color: #3f3f7a;
+  transform: translateY(-2px); /* Slight lift animation */
+}
+
+/* Crucial State: What happens when JavaScript sets aria-selected="true" */
+[role="tab"][aria-selected="true"] {
+  color: #00f0ff; /* Electric Neon Cyan */
+  background: linear-gradient(180deg, #1e1e3f 0%, #151530 100%);
+  border-color: #00f0ff; /* Glowing bounding rim */
+  position: relative;
+  transform: translateY(0);
+  /* Deep space energetic neon glow shadow */
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25), inset 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+/* Main Display Capsule Panel where contents appear */
+[role="tabpanel"] {
+  background: radial-gradient(circle at top left, #121226 0%, #0e0e1a 100%);
+  border: 2px solid #232342;
+  border-radius: 0 16px 16px 16px; /* Smooth curves wrapping the data display block */
+  padding: 2.5rem; /* Spacious internal padding for content display */
+  font-size: 1.2rem; /* Scaled up panel text size */
+  line-height: 1.6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 1;
+  margin-top: -2px; /* Pulls the panel up slightly to cleanly overlap the active tab's bottom zone */
+}
