@@ -1,0 +1,184 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --very-dark-blue: #0a0a23;
+  --white: #ffffff;
+  --yellow: #f1be32;
+  --golden-yellow: #feac32;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  text-align: center;
+  color: var(--white);
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+h1 {
+  margin: 15px 0 20px;
+}
+
+/* Feature 1: Much Larger, Premium Action Buttons */
+.btn {
+  cursor: pointer;
+  width: 140px;
+  height: 55px;
+  margin: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  color: var(--very-dark-blue);
+  background-color: var(--golden-yellow);
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border-color: var(--golden-yellow);
+  border-width: 3px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease;
+}
+
+.btn:hover {
+  background-image: linear-gradient(#ffcc4c, #f89808);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.rules-container {
+  padding: 10px 0;
+  margin: auto;
+  border-radius: 15px;
+  border: 5px solid var(--yellow);
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+}
+
+.rules-container ul {
+  list-style-type: none;
+}
+
+.rules-container p {
+  margin: 10px 0;
+}
+
+@media (min-width: 760px) {
+  .rules-container {
+    width: 60%;
+  }
+}
+
+.score-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  font-size: 1.4rem;
+}
+
+.score {
+  font-weight: bold;
+  color: var(--yellow);
+}
+
+.results-container {
+  font-size: 1.3rem;
+  margin: 15px 0;
+}
+
+#winner-msg {
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+#reset-game-btn {
+  display: none;
+  margin: 20px auto;
+  width: 160px;
+}
+
+/* Feature 2: Dual Player/Computer Battle Arena Box */
+.clash-arena {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 500px;
+  margin: 20px auto;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.hand {
+  font-size: 4rem;
+  transition: transform 0.1s ease;
+}
+
+/* Left side defaults (facing right) */
+#player-hand {
+  transform: scaleX(1); 
+}
+
+/* Right side defaults (facing left) */
+#computer-hand {
+  transform: scaleX(-1);
+}
+
+/* Animated State Triggers */
+.animate-player {
+  animation: punchLeft 0.4s ease-in-out;
+}
+
+.animate-computer {
+  animation: punchRight 0.4s ease-in-out;
+}
+
+@keyframes punchLeft {
+  0% { transform: translateX(0) scaleX(1); }
+  50% { transform: translateX(40px) scaleX(1.2) rotate(10deg); }
+  100% { transform: translateX(0) scaleX(1); }
+}
+
+@keyframes punchRight {
+  0% { transform: translateX(0) scaleX(-1); }
+  50% { transform: translateX(-40px) scaleX(-1.2) rotate(10deg); }
+  100% { transform: translateX(0) scaleX(-1); }
+}
+
+/* Feature 3: Whole Screen Screen-Shake Engine */
+.vibrate-screen {
+  animation: shake 0.15s infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(2px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(0px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(2px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Canvas Overlay Setup */
+#fx-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+}
