@@ -64,3 +64,4 @@ seenSkus.add(sku);               // mark as seen
 ```
 
 **`p.sku` specifically** — `p` is just the parameter name inside the arrow function, it represents each item in the pantry array as `.find()` loops through it. You could name it anything (`item`, `x`, `el`) — `p` is just short for "pantry item".
+
