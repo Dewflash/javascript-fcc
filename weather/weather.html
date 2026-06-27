@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Weather</title>
+<link rel="stylesheet" href="weather.css">
+</head>
+<body>
+
+<div id="background"></div>
+
+<div class="container">
+
+<h1>☀️ Happy Weather 🌈</h1>
+
+<select id="city-select">
+<option value=""></option>
+<option value="new york">New York</option>
+<option value="los angeles">Los Angeles</option>
+<option value="chicago">Chicago</option>
+<option value="paris">Paris</option>
+<option value="tokyo">Tokyo</option>
+<option value="london">London</option>
+</select>
+
+<button id="get-weather-btn">Get Weather</button>
+
+<div id="weather-card">
+
+<img id="weather-icon">
+
+<h2 id="location"></h2>
+
+<h3 id="weather-main"></h3>
+
+<p id="main-temperature"></p>
+
+<p id="feels-like"></p>
+
+<p id="humidity"></p>
+
+<p id="wind"></p>
+
+<p id="wind-gust"></p>
+
+</div>
+
+</div>
+
+<script src="weather.js"></script>
+
+</body>
+</html>
