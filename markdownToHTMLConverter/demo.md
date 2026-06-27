@@ -1,3 +1,5 @@
+//MD is ChatGPT generated
+
 # 🚀 Workspace Dashboard
 
 Welcome to the live text editor! This is a playground built to check how your compiler translates raw plain-text syntaxes into real markup nodes.

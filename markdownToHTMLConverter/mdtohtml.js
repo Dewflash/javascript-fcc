@@ -28,7 +28,7 @@ function convertMarkdown() {
   return html.replace(/\n/g, '').trim();
 }
 
-// ✨ CHANGED: Updated to intercept the flat string and pretty-print it for the code panel
+// Updated to intercept the flat string and pretty-print it for the code panel
 function updatePreview() {
   const htmlResult = convertMarkdown();
   
@@ -40,7 +40,7 @@ function updatePreview() {
   document.getElementById('preview').innerHTML = htmlResult;
 }
 
-// ✨ ADDED: Helper function to break tags apart and apply standard code-block indentation
+// Helper function to break tags apart and apply standard code-block indentation
 function formatHtmlForDisplay(htmlString) {
   let indent = 0;
   let formatted = '';
